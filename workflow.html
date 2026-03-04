@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPIMS - Specialized Engineering Workflow</title>
+    <title>EPIMS - Engineer Application</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://js.paystack.co/v1/inline.js"></script>
 
     <style>
         body {
@@ -30,76 +29,15 @@
             padding: 60px 0 30px;
         }
 
-        .field-section {
-            margin-bottom: 60px;
-        }
-
-        .field-title {
-            font-weight: 600;
-            margin-bottom: 30px;
-            color: #0d6efd;
-            border-bottom: 3px solid #0d6efd;
-            display: inline-block;
-        }
-
-        .engineer-card {
+        .form-card {
             background: white;
             border-radius: 20px;
-            padding: 25px;
+            padding: 40px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
         }
 
-        .engineer-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-name {
-            color: #0d6efd;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .badge-exp {
-            background: #e9f2ff;
-            color: #0d6efd;
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .info-label {
-            font-weight: 600;
-            color: #444;
-            font-size: 0.9rem;
-        }
-
-        .info-text {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-
-        .price {
-            font-size: 22px;
-            font-weight: 700;
-            color: #198754;
-            margin-top: auto;
-            border-top: 1px solid #eee;
-            pt-3;
-        }
-
-        .contact-link {
-            font-size: 0.85rem;
-            color: #0d6efd;
-            text-decoration: none;
-            font-weight: 500;
+        .success-message {
+            display: none;
         }
 
         footer {
@@ -112,199 +50,106 @@
 </head>
 
 <body>
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">EPIMS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="nav">
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="workflow.html">Workflow</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="workflow.html">Engineer Apply</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="log_out.html">Log_out</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- HEADER -->
     <div class="container page-header text-center">
-        <h2>Infrastructure Development Portal</h2>
-        <p class="text-muted">Hire certified experts for educational and transport projects</p>
+        <h2>Engineer Application Portal</h2>
+        <p class="text-muted">Apply to handle School or Road Construction Projects</p>
     </div>
 
-    <div class="container">
+    <!-- APPLICATION FORM -->
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-card">
 
-        <div class="field-section">
-            <h4 class="field-title">🏫 School Building Projects</h4>
-            <div class="row g-4">
-
-                <div class="col-md-3">
-                    <div class="engineer-card">
-                        <div class="project-name">Lekki Model College</div>
-                        <h5 class="engineer-name">Engr. Grace Nwosu</h5>
-                        <span class="badge-exp mb-2">6 Years Exp</span>
-                        <p class="info-text"><span class="info-label">Tools:</span> Concrete Mixer, Scaffolding, Laser
-                            Level</p>
-                        <p class="info-text"><span class="info-label">Materials:</span> Blocks, Marine Plywood, Iron
-                            Rods</p>
-                        <p class="info-text"><span class="info-label">Duration:</span> 120 Days</p>
-                        <a href="tel:+2348012345678" class="contact-link">📞 +234 801 234 5678</a>
-                        <p class="price mt-3">₦4,500,000</p>
-                        <button onclick="openPaymentModal(4500000, 'Engr. Grace Nwosu')"
-                            class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
+                    <!-- Success Message -->
+                    <div id="successBox" class="alert alert-success text-center success-message">
+                        ✅ Your application has been submitted successfully.<br>
+                        It will be reviewed by the admin.<br>
+                        Redirecting to home page...
                     </div>
+
+                    <form id="engineerForm">
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Engineering Type</label>
+                            <select class="form-select" required>
+                                <option value="">Select Type</option>
+                                <option>Road Engineer</option>
+                                <option>School Engineer</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Project Name (Road or School)</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Years of Experience</label>
+                            <input type="number" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Estimated Duration (Days)</label>
+                            <input type="number" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Tools You Will Use</label>
+                            <textarea class="form-control" rows="3" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Materials You Will Use</label>
+                            <textarea class="form-control" rows="3" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Service Fee (₦)</label>
+                            <input type="number" class="form-control" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill">
+                            Submit Application
+                        </button>
+
+                    </form>
+
                 </div>
-
-                <div class="col-md-3">
-                    <div class="engineer-card">
-                        <div class="project-name">St. Jude's Primary</div>
-                        <h5 class="engineer-name">Engr. Peter Obi</h5>
-                        <span class="badge-exp mb-2">10 Years Exp</span>
-                        <p class="info-text"><span class="info-label">Tools:</span> Excavator, Power Trowel, Drill Rigs
-                        </p>
-                        <p class="info-text"><span class="info-label">Materials:</span> Cement, Roof Trusses, Tiles</p>
-                        <p class="info-text"><span class="info-label">Duration:</span> 90 Days</p>
-                        <a href="tel:+2348022233445" class="contact-link">📞 +234 802 223 3445</a>
-                        <p class="price mt-3">₦3,800,000</p>
-                        <button onclick="openPaymentModal(3800000, 'Engr. Peter Obi')"
-                            class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="engineer-card">
-                        <div class="project-name">Greenfield Academy</div>
-                        <h5 class="engineer-name">Engr. Sarah Aliyu</h5>
-                        <span class="badge-exp mb-2">4 Years Exp</span>
-                        <p class="info-text"><span class="info-label">Tools:</span> Hand Compactor, Spirit Levels,
-                            Circular Saw</p>
-                        <p class="info-text"><span class="info-label">Materials:</span> Paint, POP Ceilings, Electrical
-                            Wires</p>
-                        <p class="info-text"><span class="info-label">Duration:</span> 45 Days</p>
-                        <a href="tel:+2347033344455" class="contact-link">📞 +234 703 334 4455</a>
-                        <p class="price mt-3">₦2,100,000</p>
-                        <button onclick="openPaymentModal(2100000, 'Engr. Sarah Aliyu')"
-                            class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="engineer-card">
-                        <div class="project-name">Tech Hub University</div>
-                        <h5 class="engineer-name">Engr. David Mark</h5>
-                        <span class="badge-exp mb-2">15 Years Exp</span>
-                        <p class="info-text"><span class="info-label">Tools:</span> Tower Crane, Concrete Pump, Welding
-                            Machine</p>
-                        <p class="info-text"><span class="info-label">Materials:</span> Glass Panels, Steel Beams,
-                            Granite</p>
-                        <p class="info-text"><span class="info-label">Duration:</span> 200 Days</p>
-                        <a href="tel:+2349055566677" class="contact-link">📞 +234 905 556 6677</a>
-                        <p class="price mt-3">₦8,500,000</p>
-                        <button onclick="openPaymentModal(8500000, 'Engr. David Mark')"
-                            class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="field-section">
-            <h4 class="field-title">🛣️ Road Construction Projects</h4>
-            <div class="row g-4">
-
-                <div class="col-md-3">
-                    <div class="engineer-card">
-                        <div class="project-name">Airport Bypass Road</div>
-                        <h5 class="engineer-name">Engr. Daniel Okafor</h5>
-                        <span class="badge-exp mb-2">8 Years Exp</span>
-                        <p class="info-text"><span class="info-label">Tools:</span> Paver Finisher, Road Roller, Grader
-                        </p>
-                        <p class="info-text"><span class="info-label">Materials:</span> Bitumen, Asphalt, Crushed Stone
-                        </p>
-                        <p class="info-text"><span class="info-label">Duration:</span> 60 Days</p>
-                        <a href="tel:+2348099988877" class="contact-link">📞 +234 809 998 8877</a>
-                        <p class="price mt-3">₦5,500,000</p>
-                        <button onclick="openPaymentModal(5500000, 'Engr. Daniel Okafor')"
-                            class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="engineer-card">
-                        <div class="project-name">Mainland Bridge Repair</div>
-                        <h5 class="engineer-name">Engr. Kazeem Bello</h5>
-                        <span class="badge-exp mb-2">12 Years Exp</span>
-                        <p class="info-text"><span class="info-label">Tools:</span> Jackhammer, Hydro-demolition,
-                            Bearings</p>
-                        <p class="info-text"><span class="info-label">Materials:</span> Expansion Joints, Epoxy, Rebar
-                        </p>
-                        <p class="info-text"><span class="info-label">Duration:</span> 30 Days</p>
-                        <a href="tel:+2348111222333" class="contact-link">📞 +234 811 122 2333</a>
-                        <p class="price mt-3">₦12,000,000</p>
-                        <button onclick="openPaymentModal(12000000, 'Engr. Kazeem Bello')"
-                            class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="engineer-card">
-                        <div class="project-name">Village Access Road</div>
-                        <h5 class="engineer-name">Engr. Maryam Abu</h5>
-                        <span class="badge-exp mb-2">5 Years Exp</span>
-                        <p class="info-text"><span class="info-label">Tools:</span> Bulldozer, Backhoe, Dump Truck</p>
-                        <p class="info-text"><span class="info-label">Materials:</span> Laterite, Culvert Pipes, Gravel
-                        </p>
-                        <p class="info-text"><span class="info-label">Duration:</span> 45 Days</p>
-                        <a href="tel:+2347088899900" class="contact-link">📞 +234 708 889 9900</a>
-                        <p class="price mt-3">₦3,200,000</p>
-                        <button onclick="openPaymentModal(3200000, 'Engr. Maryam Abu')"
-                            class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="engineer-card">
-                        <div class="project-name">Expressway Expansion</div>
-                        <h5 class="engineer-name">Engr. Festus Ajayi</h5>
-                        <span class="badge-exp mb-2">20 Years Exp</span>
-                        <p class="info-text"><span class="info-label">Tools:</span> Milling Machine, Cold Planer, Paving
-                            Train</p>
-                        <p class="info-text"><span class="info-label">Materials:</span> Polymer Bitumen, Concrete
-                            Barriers</p>
-                        <p class="info-text"><span class="info-label">Duration:</span> 365 Days</p>
-                        <a href="tel:+2349011122233" class="contact-link">📞 +234 901 112 2233</a>
-                        <p class="price mt-3">₦25,000,000</p>
-                        <button onclick="openPaymentModal(25000000, 'Engr. Festus Ajayi')"
-                            class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <div class="modal fade" id="paymentDetailsModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="border-radius: 20px;">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="selectedEngineerTitle">Hire Engineer</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <form id="prePaymentForm">
-                    <div class="modal-body">
-                        <label class="form-label">Client Email</label>
-                        <input type="email" id="customerEmail" class="form-control mb-3" required>
-                        <label class="form-label">Service Fee</label>
-                        <input type="text" id="displayAmount" class="form-control" readonly>
-                    </div>
-                    <div class="modal-footer border-0">
-                        <button type="submit" class="btn btn-primary w-100 rounded-pill">Pay via Paystack</button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
@@ -315,43 +160,24 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- SCRIPT -->
     <script>
-        let currentAmount = 0;
-        let currentEngineer = "";
-        const bootstrapModal = new bootstrap.Modal(document.getElementById('paymentDetailsModal'));
-
-        function openPaymentModal(amount, name) {
-            currentAmount = amount;
-            currentEngineer = name;
-            document.getElementById('selectedEngineerTitle').innerText = "Hire " + name;
-            document.getElementById('displayAmount').value = "₦" + amount.toLocaleString();
-            bootstrapModal.show();
-        }
-
-        document.getElementById('prePaymentForm').addEventListener('submit', function (e) {
+        document.getElementById("engineerForm").addEventListener("submit", function (e) {
             e.preventDefault();
-            const email = document.getElementById('customerEmail').value;
-            bootstrapModal.hide();
-            payWithPaystack(email);
-        });
 
-        function payWithPaystack(email) {
-            let handler = PaystackPop.setup({
-                key: 'pk_test_your_key_here', // REPLACE WITH YOUR ACTUAL KEY
-                email: email,
-                amount: currentAmount * 100,
-                currency: 'NGN',
-                ref: 'EPIMS_' + Date.now(),
-                callback: function (response) {
-                    window.location.href = `status.html?ref=${response.reference}&engineer=${encodeURIComponent(currentEngineer)}`;
-                },
-                onClose: function () { alert('Process Interrupted.'); }
-            });
-            handler.openIframe();
-        }
+            // Hide form
+            this.style.display = "none";
+
+            // Show success message
+            document.getElementById("successBox").style.display = "block";
+
+            // Redirect after 3 seconds
+            setTimeout(function () {
+                window.location.href = "home.html";
+            }, 3000);
+        });
     </script>
+
 </body>
 
 </html>
