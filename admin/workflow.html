@@ -152,6 +152,7 @@
                             Rods</p>
                         <p class="info-text"><span class="info-label">Duration:</span> 120 Days</p>
                         <a href="tel:+2348012345678" class="contact-link">📞 +234 801 234 5678</a>
+                        <a href="mailto:grace@example.com" class="btn btn-outline-primary w-100 rounded-pill mt-2">grace@example.com</a>
                         <p class="price mt-3">₦4,500,000</p>
                         <button onclick="openPaymentModal(4500000, 'Engr. Grace Nwosu')"
                             class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
@@ -168,6 +169,8 @@
                         <p class="info-text"><span class="info-label">Materials:</span> Cement, Roof Trusses, Tiles</p>
                         <p class="info-text"><span class="info-label">Duration:</span> 90 Days</p>
                         <a href="tel:+2348022233445" class="contact-link">📞 +234 802 223 3445</a>
+                        <a href="mailto:peter@example.com" class="btn btn-outline-primary w-100 rounded-pill mt-2">peter@gmail.com</a>
+
                         <p class="price mt-3">₦3,800,000</p>
                         <button onclick="openPaymentModal(3800000, 'Engr. Peter Obi')"
                             class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
@@ -185,6 +188,7 @@
                             Wires</p>
                         <p class="info-text"><span class="info-label">Duration:</span> 45 Days</p>
                         <a href="tel:+2347033344455" class="contact-link">📞 +234 703 334 4455</a>
+                        <a href="mailto:sarah@example.com" class="btn btn-outline-primary w-100 rounded-pill mt-2">Sarah@gmail.com</a>
                         <p class="price mt-3">₦2,100,000</p>
                         <button onclick="openPaymentModal(2100000, 'Engr. Sarah Aliyu')"
                             class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
@@ -202,7 +206,7 @@
                             Granite</p>
                         <p class="info-text"><span class="info-label">Duration:</span> 200 Days</p>
                         <a href="tel:+2349055566677" class="contact-link">📞 +234 905 556 6677</a>
-                        <a href="mailto:@example.com" class="btn btn-outline-primary w-100 rounded-pill mt-2">Maryam@gmail.com</a>
+                        <a href="mailto:david@example.com" class="btn btn-outline-primary w-100 rounded-pill mt-2">david@gmail.com</a>
                         <p class="price mt-3">₦8,500,000</p>
                         <button onclick="openPaymentModal(8500000, 'Engr. David Mark')"
                             class="btn btn-primary w-100 rounded-pill mt-2">Hire Now</button>
@@ -344,7 +348,7 @@
 
         function payWithPaystack(email) {
             let handler = PaystackPop.setup({
-                key: 'pk_test_your_key_here', // REPLACE WITH YOUR ACTUAL KEY
+                key: 'pk_test_9ecb38d504444a5404332980d122f5d906971a2e', // REPLACE WITH YOUR ACTUAL KEY
                 email: email,
                 amount: currentAmount * 100,
                 currency: 'NGN',
